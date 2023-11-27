@@ -1,0 +1,12 @@
+{
+  "name": "ashish-portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-backend" : "cd backend && npm install --force && npm run build"
+  },
+  "author": "",
+  "license": "ISC"
+}

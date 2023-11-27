@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_navbar_navbars",
+  "info": {
+    "displayName": "navbar",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "Logo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "navbar.logo"
+    },
+    "links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "navbar.nav-links"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "my_portfolios",
+  "info": {
+    "singularName": "my-portfolio",
+    "pluralName": "my-portfolios",
+    "displayName": "my-portfolio"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "portfolioData": {
+      "type": "dynamiczone",
+      "components": [
+        "navbar.navbar"
+      ]
+    }
+  }
+}
