@@ -44,7 +44,7 @@ const NavMenu = ({viewport} : {viewport : string}) => {
       <a className=" text-sm md:text-base hover:text-gray-400 hover:transition-all hover:duration-500 hover:ease-in-out " href="#">
         Work
       </a>
-      <a className=" text-sm md:text-base hover:text-gray-400 hover:transition-all hover:duration-500 hover:ease-in-out " href="#">
+      <a className=" text-sm md:text-base hover:text-gray-400 hover:transition-all hover:duration-500 hover:ease-in-out " href="#skills">
         Skills
       </a>
       <a className=" text-sm md:text-base hover:text-gray-400 hover:transition-all hover:duration-500 hover:ease-in-out " href="#">

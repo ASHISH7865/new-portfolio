@@ -1,9 +1,9 @@
 import React from "react";
-import { Badge } from "./ui/badge";
+import { Badge } from "../../ui/badge";
 
 const Hero = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <section id="main" className="flex flex-col items-center justify-center min-h-screen py-2">
       <div className="lg:w-1/2 self-center">
         <h1 className=" font-extrabold text-[70px] md:text-[100px] lg:text-[150px] text-center">ASHISH</h1>
         <div className="flex flex-col  text-[15px] md:text-[15px] lg:text-[15px]  items-center justify-around text-center  ">
@@ -20,7 +20,7 @@ const Hero = () => {
           
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

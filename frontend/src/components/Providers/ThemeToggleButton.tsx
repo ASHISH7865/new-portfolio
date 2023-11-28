@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import { BsMoonStarsFill, BsSunFill } from "react-icons/bs";
 
 const ThemeToggleButton = () => {
