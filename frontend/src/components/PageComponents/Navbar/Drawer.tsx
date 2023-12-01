@@ -5,7 +5,7 @@ import { BsList } from "react-icons/bs";
 import NavMenu from "./NavMenu";
 
 
-const Drawer = () => {
+const Drawer = ({NavLinks}  :any) => {
   return (
     <Sheet>
     <SheetTrigger asChild>
@@ -14,7 +14,7 @@ const Drawer = () => {
       </Button>
     </SheetTrigger>
     <SheetContent className="flex justify-center items-center">
-     <NavMenu viewport={"mobile"} />
+     <NavMenu NavLinks={NavLinks} viewport={"mobile"} />
     </SheetContent>
   </Sheet>
   )
