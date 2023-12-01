@@ -1,6 +1,7 @@
 import React from 'react'
 import Skill from './SkillComponent'
 import GroupSkill from './GroupSkill'
+import SectionHeader from '@/components/Common/SectionHeader'
 
 const GroupSkillData = [
   {
@@ -20,10 +21,9 @@ const GroupSkillData = [
 const Skills = () => {
   return (
     <section id="skills">
-        <h1 className="text-4xl text-center mb-10">What I Know</h1>
+        <SectionHeader text="What I Know" />
         <div className='flex gap-8 flex-col'>
         <div className='flex gap-4 justify-center flex-wrap '>
-            <Skill />
             <Skill />
             <Skill />
             <Skill />

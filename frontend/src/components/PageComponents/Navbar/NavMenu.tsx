@@ -1,55 +1,34 @@
-
-const components: { title: string; href: string; description: string }[] = [
+const NavLinks = [
   {
-    title: "Home",
-    href: "#home",
-    description: "The main page",
+    name: "About",
+    link: "#",
   },
   {
-    title: "About",
-    href: "#about",
-    description: "The about page",
+    name: "Projects",
+    link: "#",
   },
   {
-    title: "Projects",
-    href: "#projects",
-    description: "The projects page",
+    name: "Work",
+    link: "#",
   },
   {
-    title: "Work",
-    href: "#work",
-    description: "The work page",
+    name: "Skills",
+    link: "#skills",
   },
   {
-    title: "Skills",
-    href: "#skills",
-    description: "The skills page",
-  },
-  {
-    title: "Contact",
-    href: "#contact",
-    description: "The contact page",
+    name: "Contact",
+    link: "#",
   },
 ];
 
-const NavMenu = ({viewport} : {viewport : string}) => {
+const NavMenu = ({ viewport }: { viewport: string }) => {
   return (
-    <nav className={` md:flex flex-col md:flex-row gap-4 ${viewport === "mobile" ? "flex": "hidden"}`}>
-      <a className=" text-sm md:text-base hover:text-gray-400 hover:transition-all hover:duration-500 hover:ease-in-out " href="#">
-        About
-      </a>
-      <a className=" text-sm md:text-base hover:text-gray-400 hover:transition-all hover:duration-500 hover:ease-in-out " href="#">
-        Projects
-      </a>
-      <a className=" text-sm md:text-base hover:text-gray-400 hover:transition-all hover:duration-500 hover:ease-in-out " href="#">
-        Work
-      </a>
-      <a className=" text-sm md:text-base hover:text-gray-400 hover:transition-all hover:duration-500 hover:ease-in-out " href="#skills">
-        Skills
-      </a>
-      <a className=" text-sm md:text-base hover:text-gray-400 hover:transition-all hover:duration-500 hover:ease-in-out " href="#">
-        Contact
-      </a>
+    <nav className={` md:flex flex-col md:flex-row gap-4 ${viewport === "mobile" ? "flex" : "hidden"}`}>
+      {NavLinks.map((link) => (
+        <a className=" text-lg md:text-base hover:text-gray-400 hover:transition-all hover:duration-500 hover:ease-in-out " href={link.link} key={link.link}>
+          {link.name}
+        </a>
+      ))}
     </nav>
   );
 };
