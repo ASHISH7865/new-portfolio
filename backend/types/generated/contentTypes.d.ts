@@ -368,6 +368,7 @@ export interface ApiMyPortfolioMyPortfolio extends Schema.SingleType {
     singularName: 'my-portfolio';
     pluralName: 'my-portfolios';
     displayName: 'my-portfolio';
+    description: '';
   };
   options: {
     draftAndPublish: true;

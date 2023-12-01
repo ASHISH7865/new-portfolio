@@ -29,10 +29,13 @@ export interface NavbarNavbar extends Schema.Component {
   info: {
     displayName: 'navbar';
     icon: 'apps';
+    description: '';
   };
   attributes: {
     Logo: Attribute.Component<'navbar.logo'>;
-    links: Attribute.Component<'navbar.nav-links', true>;
+    Links: Attribute.Component<'navbar.nav-links', true>;
+    DarkMode: Attribute.Boolean;
+    ComponentName: Attribute.String;
   };
 }
 

@@ -2,7 +2,8 @@
   "collectionName": "components_navbar_navbars",
   "info": {
     "displayName": "navbar",
-    "icon": "apps"
+    "icon": "apps",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -11,10 +12,16 @@
       "repeatable": false,
       "component": "navbar.logo"
     },
-    "links": {
+    "Links": {
       "type": "component",
       "repeatable": true,
       "component": "navbar.nav-links"
+    },
+    "DarkMode": {
+      "type": "boolean"
+    },
+    "ComponentName": {
+      "type": "string"
     }
   }
 }
