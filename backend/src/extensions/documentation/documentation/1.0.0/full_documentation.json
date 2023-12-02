@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-12-02T11:26:53.778Z"
+    "x-generation-date": "2023-12-02T12:58:30.706Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -624,6 +624,9 @@
             "items": {
               "$ref": "#/components/schemas/FeaturedskillsFeatuedSkillsCardComponent"
             }
+          },
+          "ComponentName": {
+            "type": "string"
           }
         }
       },

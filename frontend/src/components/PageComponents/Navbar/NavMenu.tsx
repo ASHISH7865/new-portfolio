@@ -1,7 +1,6 @@
 
 
 const NavMenu = ({ viewport , NavLinks }: { viewport: string , NavLinks : any}) => {
-  console.log(NavLinks);
   return (
     <nav className={` md:flex flex-col md:flex-row gap-4 ${viewport === "mobile" ? "flex" : "hidden"}`}>
       {NavLinks?.map((link : any) => (

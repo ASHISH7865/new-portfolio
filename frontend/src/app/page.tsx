@@ -5,7 +5,7 @@ import Skills from "@/components/PageComponents/Skills/Skills";
 const componentMap = {
   Header: Navbar,
   Hero: Hero,
-  skills: Skills,
+  Skills: Skills,
 };
 
 export default async function Home() {

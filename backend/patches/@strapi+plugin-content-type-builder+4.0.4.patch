@@ -1,0 +1,44 @@
+diff --git a/node_modules/@strapi/plugin-content-type-builder/admin/src/components/SelectComponent/index.js b/node_modules/@strapi/plugin-content-type-builder/admin/src/components/SelectComponent/index.js
+index 0c692d8..5d96d05 100644
+--- a/node_modules/@strapi/plugin-content-type-builder/admin/src/components/SelectComponent/index.js
++++ b/node_modules/@strapi/plugin-content-type-builder/admin/src/components/SelectComponent/index.js
+@@ -47,11 +47,11 @@ const SelectComponent = ({
+     return [...acc, ...compos];
+   }, []);
+
+-  if (isAddingAComponentToAnotherComponent) {
+-    options = options.filter(option => {
+-      return !componentsThatHaveOtherComponentInTheirAttributes.includes(option.uid);
+-    });
+-  }
++  // if (isAddingAComponentToAnotherComponent) {
++  //   options = options.filter(option => {
++  //     return !componentsThatHaveOtherComponentInTheirAttributes.includes(option.uid);
++  //   });
++  // }
+
+   if (isTargetAComponent) {
+     options = options.filter(option => {
+diff --git a/node_modules/@strapi/plugin-content-type-builder/server/controllers/validation/types.js b/node_modules/@strapi/plugin-content-type-builder/server/controllers/validation/types.js
+index 735f4ea..faab13f 100644
+--- a/node_modules/@strapi/plugin-content-type-builder/server/controllers/validation/types.js
++++ b/node_modules/@strapi/plugin-content-type-builder/server/controllers/validation/types.js
+@@ -237,12 +237,12 @@ const getTypeShape = (attribute, { modelType, attributes } = {}) => {
+               const targetCompo = strapi.components[compoUID];
+               if (!targetCompo) return true; // ignore this error as it will fail beforehand
+
+-              if (modelType === modelTypes.COMPONENT && hasComponent(targetCompo)) {
+-                return this.createError({
+-                  path: this.path,
+-                  message: `${targetCompo.modelName} already is a nested component. You cannot have more than one level of nesting inside your components.`,
+-                });
+-              }
++              // if (modelType === modelTypes.COMPONENT && hasComponent(targetCompo)) {
++              //   return this.createError({
++              //     path: this.path,
++              //     message: `${targetCompo.modelName} already is a nested component. You cannot have more than one level of nesting inside your components.`,
++              //   });
++              // }
+               return true;
+             },
+           })

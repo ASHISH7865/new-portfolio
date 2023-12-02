@@ -23,6 +23,7 @@ export interface FeaturedskillsSkillComponent extends Schema.Component {
       'featuredskills.featued-skills-card',
       true
     >;
+    ComponentName: Attribute.String;
   };
 }
 
