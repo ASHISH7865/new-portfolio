@@ -43,7 +43,6 @@ export interface HeaderHeaderComponent extends Schema.Component {
     description: '';
   };
   attributes: {
-    LogoImage: Attribute.Component<'header.logo'>;
     NavLinks: Attribute.Component<'header.nav-links', true>;
     DarkMode: Attribute.Boolean & Attribute.DefaultTo<false>;
     sectionHeader: Attribute.String;

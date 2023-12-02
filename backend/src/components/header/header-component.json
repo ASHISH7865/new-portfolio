@@ -6,11 +6,6 @@
   },
   "options": {},
   "attributes": {
-    "LogoImage": {
-      "type": "component",
-      "repeatable": false,
-      "component": "header.logo"
-    },
     "NavLinks": {
       "type": "component",
       "repeatable": true,

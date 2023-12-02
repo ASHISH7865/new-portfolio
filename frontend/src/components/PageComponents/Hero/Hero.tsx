@@ -8,7 +8,7 @@ const Hero = (props : any) => {
         <h1 className=" font-extrabold text-[70px] md:text-[100px] lg:text-[150px] text-center">{props.Title}</h1>
         <div className="flex flex-col  text-[15px] md:text-[15px] lg:text-[15px]  items-center justify-around text-center  ">
           <p className="w-[85%] capitalize">
-           {props.Description}
+           {props.Description} 
           </p>
           <div className="flex flex-wrap justify-center items-center gap-4 mt-10 w-[85%]"> 
           {

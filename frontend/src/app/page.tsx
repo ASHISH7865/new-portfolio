@@ -12,7 +12,6 @@ export default async function Home() {
   const data = await getServerSideProps();
   const renderComponents = data?.map((component: any, index: number) => {
     const Component = componentMap[component.ComponentName as keyof typeof componentMap];
-    console.log(Component);
     if (!Component) {
       return null;
     }
@@ -24,7 +23,6 @@ export default async function Home() {
 
 async function getServerSideProps() {
   const url = process.env.NEXT_STRAPI_LOCAL_API_URL + "/api/";
-  console.log(url);
   const endpoint = "my-portfolio?populate=deep";
   const res = await fetch(url + endpoint);
   const result = await res.json();
