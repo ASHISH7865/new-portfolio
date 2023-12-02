@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_header_header_components",
+  "info": {
+    "displayName": "Header Component",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "LogoImage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "header.logo"
+    },
+    "NavLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "header.nav-links"
+    },
+    "DarkMode": {
+      "type": "boolean",
+      "default": false
+    },
+    "sectionHeader": {
+      "type": "string"
+    },
+    "ComponentName": {
+      "type": "string"
+    }
+  }
+}

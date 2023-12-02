@@ -1,12 +1,14 @@
 {
-  "collectionName": "components_navbar_logos",
+  "collectionName": "components_header_logos",
   "info": {
-    "displayName": "Logo",
-    "icon": "chartBubble"
+    "displayName": "Logo"
   },
   "options": {},
   "attributes": {
-    "logo_image": {
+    "name": {
+      "type": "string"
+    },
+    "image": {
       "allowedTypes": [
         "images",
         "files",
@@ -15,9 +17,6 @@
       ],
       "type": "media",
       "multiple": false
-    },
-    "logo_name": {
-      "type": "string"
     }
   }
 }

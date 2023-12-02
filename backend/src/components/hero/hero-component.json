@@ -1,21 +1,24 @@
 {
-  "collectionName": "components_hero_heroes",
+  "collectionName": "components_hero_hero_components",
   "info": {
-    "displayName": "Hero",
+    "displayName": "Hero Component",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "Title": {
+    "title": {
       "type": "string"
     },
-    "Description": {
+    "description": {
       "type": "text"
     },
-    "TopSkills": {
+    "topSkills": {
       "type": "component",
       "repeatable": true,
-      "component": "global.skill-badge"
+      "component": "global.badge"
+    },
+    "sectionHeader": {
+      "type": "string"
     },
     "ComponentName": {
       "type": "string"

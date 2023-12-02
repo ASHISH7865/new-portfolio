@@ -23,7 +23,7 @@ export default async function Home() {
 }
 
 async function getServerSideProps() {
-  const url = process.env.NEXT_STRAPI_PROD_URL + "/api/";
+  const url = process.env.NEXT_STRAPI_LOCAL_API_URL + "/api/";
   console.log(url);
   const endpoint = "my-portfolio?populate=deep";
   const res = await fetch(url + endpoint);

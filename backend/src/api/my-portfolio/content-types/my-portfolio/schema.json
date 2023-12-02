@@ -15,8 +15,9 @@
     "portfolioData": {
       "type": "dynamiczone",
       "components": [
-        "navbar.navbar",
-        "hero.hero"
+        "header.header-component",
+        "hero.hero-component",
+        "featuredskills.skill-component"
       ]
     }
   }

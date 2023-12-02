@@ -374,7 +374,13 @@ export interface ApiMyPortfolioMyPortfolio extends Schema.SingleType {
     draftAndPublish: true;
   };
   attributes: {
-    portfolioData: Attribute.DynamicZone<['navbar.navbar', 'hero.hero']>;
+    portfolioData: Attribute.DynamicZone<
+      [
+        'header.header-component',
+        'hero.hero-component',
+        'featuredskills.skill-component'
+      ]
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

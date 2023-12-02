@@ -1,7 +1,7 @@
 {
-  "collectionName": "components_skill_grouped_skills",
+  "collectionName": "components_featuredskills_featued_skills_cards",
   "info": {
-    "displayName": "Grouped Skill"
+    "displayName": "FeatuedSkills Card"
   },
   "options": {},
   "attributes": {
@@ -11,7 +11,7 @@
     "skills": {
       "type": "component",
       "repeatable": true,
-      "component": "global.skill-badge"
+      "component": "global.badge"
     }
   }
 }

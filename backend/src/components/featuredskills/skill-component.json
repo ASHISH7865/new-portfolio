@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_featuredskills_skill_components",
+  "info": {
+    "displayName": "FeaturedSkill Component",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "sectionHeader": {
+      "type": "string"
+    },
+    "skillsArray": {
+      "displayName": "FeatuedSkills Card",
+      "type": "component",
+      "repeatable": true,
+      "component": "featuredskills.featued-skills-card"
+    }
+  }
+}

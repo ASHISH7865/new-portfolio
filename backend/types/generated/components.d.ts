@@ -1,90 +1,103 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface GlobalSkillBadge extends Schema.Component {
-  collectionName: 'components_global_skill_badges';
+export interface FeaturedskillsFeatuedSkillsCard extends Schema.Component {
+  collectionName: 'components_featuredskills_featued_skills_cards';
   info: {
-    displayName: 'Skill Badge';
+    displayName: 'FeatuedSkills Card';
+  };
+  attributes: {
+    title: Attribute.String;
+    skills: Attribute.Component<'global.badge', true>;
+  };
+}
+
+export interface FeaturedskillsSkillComponent extends Schema.Component {
+  collectionName: 'components_featuredskills_skill_components';
+  info: {
+    displayName: 'FeaturedSkill Component';
     description: '';
   };
   attributes: {
-    SkillName: Attribute.String;
+    sectionHeader: Attribute.String;
+    skillsArray: Attribute.Component<
+      'featuredskills.featued-skills-card',
+      true
+    >;
+  };
+}
+
+export interface GlobalBadge extends Schema.Component {
+  collectionName: 'components_global_badges';
+  info: {
+    displayName: 'Badge';
+  };
+  attributes: {
     title: Attribute.String;
   };
 }
 
-export interface HeroHero extends Schema.Component {
-  collectionName: 'components_hero_heroes';
+export interface HeaderHeaderComponent extends Schema.Component {
+  collectionName: 'components_header_header_components';
   info: {
-    displayName: 'Hero';
+    displayName: 'Header Component';
     description: '';
   };
   attributes: {
-    Title: Attribute.String;
-    Description: Attribute.Text;
-    TopSkills: Attribute.Component<'global.skill-badge', true>;
+    LogoImage: Attribute.Component<'header.logo'>;
+    NavLinks: Attribute.Component<'header.nav-links', true>;
+    DarkMode: Attribute.Boolean & Attribute.DefaultTo<false>;
+    sectionHeader: Attribute.String;
     ComponentName: Attribute.String;
   };
 }
 
-export interface NavbarLogo extends Schema.Component {
-  collectionName: 'components_navbar_logos';
+export interface HeaderLogo extends Schema.Component {
+  collectionName: 'components_header_logos';
   info: {
     displayName: 'Logo';
-    icon: 'chartBubble';
   };
   attributes: {
-    logo_image: Attribute.Media;
-    logo_name: Attribute.String;
+    name: Attribute.String;
+    image: Attribute.Media;
   };
 }
 
-export interface NavbarNavLinks extends Schema.Component {
-  collectionName: 'components_navbar_nav_links';
+export interface HeaderNavLinks extends Schema.Component {
+  collectionName: 'components_header_nav_links';
   info: {
-    displayName: 'NavLinks';
-    icon: 'bulletList';
+    displayName: 'Nav Links';
   };
   attributes: {
-    title: Attribute.String;
-    link: Attribute.Text;
+    name: Attribute.String;
+    link: Attribute.String;
   };
 }
 
-export interface NavbarNavbar extends Schema.Component {
-  collectionName: 'components_navbar_navbars';
+export interface HeroHeroComponent extends Schema.Component {
+  collectionName: 'components_hero_hero_components';
   info: {
-    displayName: 'navbar';
-    icon: 'apps';
+    displayName: 'Hero Component';
     description: '';
   };
   attributes: {
-    Logo: Attribute.Component<'navbar.logo'>;
-    Links: Attribute.Component<'navbar.nav-links', true>;
-    DarkMode: Attribute.Boolean;
-    ComponentName: Attribute.String;
-  };
-}
-
-export interface SkillGroupedSkill extends Schema.Component {
-  collectionName: 'components_skill_grouped_skills';
-  info: {
-    displayName: 'Grouped Skill';
-  };
-  attributes: {
     title: Attribute.String;
-    skills: Attribute.Component<'global.skill-badge', true>;
+    description: Attribute.Text;
+    topSkills: Attribute.Component<'global.badge', true>;
+    sectionHeader: Attribute.String;
+    ComponentName: Attribute.String;
   };
 }
 
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'global.skill-badge': GlobalSkillBadge;
-      'hero.hero': HeroHero;
-      'navbar.logo': NavbarLogo;
-      'navbar.nav-links': NavbarNavLinks;
-      'navbar.navbar': NavbarNavbar;
-      'skill.grouped-skill': SkillGroupedSkill;
+      'featuredskills.featued-skills-card': FeaturedskillsFeatuedSkillsCard;
+      'featuredskills.skill-component': FeaturedskillsSkillComponent;
+      'global.badge': GlobalBadge;
+      'header.header-component': HeaderHeaderComponent;
+      'header.logo': HeaderLogo;
+      'header.nav-links': HeaderNavLinks;
+      'hero.hero-component': HeroHeroComponent;
     }
   }
 }
