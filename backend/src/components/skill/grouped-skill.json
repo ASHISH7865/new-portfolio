@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_skill_grouped_skills",
+  "info": {
+    "displayName": "Grouped Skill"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "skills": {
+      "type": "component",
+      "repeatable": true,
+      "component": "global.skill-badge"
+    }
+  }
+}

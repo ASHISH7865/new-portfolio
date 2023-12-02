@@ -15,7 +15,8 @@
     "portfolioData": {
       "type": "dynamiczone",
       "components": [
-        "navbar.navbar"
+        "navbar.navbar",
+        "hero.hero"
       ]
     }
   }
