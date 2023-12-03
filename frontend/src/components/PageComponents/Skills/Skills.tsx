@@ -27,7 +27,7 @@ const Skills = (props : any) => {
             <Skill />
         </div>
         
-        <div className='flex gap-4 justify-center flex-col flex-wrap md:flex-row '>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-14 px-5 md:px-0 lg:w-[80%] m-auto w-full'>
          {props?.skillsArray?.map((skillGroup : any) => (
             <GroupSkill key={skillGroup.id} title={skillGroup.title} skillArray={skillGroup.skills} />
          )

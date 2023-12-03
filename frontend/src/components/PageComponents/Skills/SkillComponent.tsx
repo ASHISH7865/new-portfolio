@@ -1,4 +1,5 @@
 import React from "react";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { FaReact, FaNode } from "react-icons/fa";
 import { SiTailwindcss } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io";
@@ -50,18 +51,25 @@ const skillMap = [
     title: "Docker",
     icon: <SiDocker className="text-5xl text-blue-800  " />,
   },
-]
+];
 
 const Skill = () => {
   return (
     <div className="flex gap-4 justify-center flex-wrap ">
-      {
-        skillMap.map((skill : any) => (
-          <div key={skill.title} className="p-4 rounded-md hover:bg-slate-100 dark:hover:bg-[#1a1a1a]  shadow-border ">
-            {skill.icon}
-          </div>
-        ))
-      }
+      {skillMap.map((skill: any) => (
+        <TooltipProvider key={skill.title}>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <div key={skill.title} className="p-4 rounded-md hover:bg-slate-100 dark:hover:bg-[#1a1a1a]  shadow-border ">
+                {skill.icon}
+              </div>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>{skill.title}</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      ))}
     </div>
   );
 };
