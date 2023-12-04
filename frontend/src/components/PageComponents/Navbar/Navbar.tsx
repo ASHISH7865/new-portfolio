@@ -7,7 +7,7 @@ import NavMenu from "./NavMenu";
 const Navbar = (props: any) => {
   return (
     <section className="flex justify-center">
-      <div className="w-[90%] rounded-lg fixed m-auto px-10 py-5 flex justify-between items-center z-10 backdrop-filter backdrop-blur-lg bg-opacity-50 shadow-border ">
+      <div className="w-[90%] rounded-lg fixed m-auto px-10 py-5 flex justify-between items-center z-[9999] backdrop-filter backdrop-blur-lg bg-opacity-50 shadow-border ">
         <Logo />
         <NavMenu viewport={"desktop"} NavLinks={props.NavLinks} />
         <div className="flex items-center ">
