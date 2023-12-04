@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_projects_tech_stack_tags",
+  "info": {
+    "displayName": "Tech Stack Tag"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "stack": {
+      "displayName": "stack",
+      "type": "component",
+      "repeatable": true,
+      "component": "projects.stack"
+    }
+  }
+}

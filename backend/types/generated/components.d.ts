@@ -37,6 +37,18 @@ export interface GlobalBadge extends Schema.Component {
   };
 }
 
+export interface GlobalLink extends Schema.Component {
+  collectionName: 'components_global_links';
+  info: {
+    displayName: 'Link';
+    description: '';
+  };
+  attributes: {
+    name: Attribute.String;
+    url: Attribute.String;
+  };
+}
+
 export interface HeaderHeaderComponent extends Schema.Component {
   collectionName: 'components_header_header_components';
   info: {
@@ -88,16 +100,41 @@ export interface HeroHeroComponent extends Schema.Component {
   };
 }
 
+export interface ProjectsStack extends Schema.Component {
+  collectionName: 'components_projects_stacks';
+  info: {
+    displayName: 'stack';
+    description: '';
+  };
+  attributes: {
+    name: Attribute.String;
+  };
+}
+
+export interface ProjectsTechStackTag extends Schema.Component {
+  collectionName: 'components_projects_tech_stack_tags';
+  info: {
+    displayName: 'Tech Stack Tag';
+  };
+  attributes: {
+    name: Attribute.String;
+    stack: Attribute.Component<'projects.stack', true>;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'featuredskills.featued-skills-card': FeaturedskillsFeatuedSkillsCard;
       'featuredskills.skill-component': FeaturedskillsSkillComponent;
       'global.badge': GlobalBadge;
+      'global.link': GlobalLink;
       'header.header-component': HeaderHeaderComponent;
       'header.logo': HeaderLogo;
       'header.nav-links': HeaderNavLinks;
       'hero.hero-component': HeroHeroComponent;
+      'projects.stack': ProjectsStack;
+      'projects.tech-stack-tag': ProjectsTechStackTag;
     }
   }
 }

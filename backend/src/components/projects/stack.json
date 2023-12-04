@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_projects_stacks",
+  "info": {
+    "displayName": "stack",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}
