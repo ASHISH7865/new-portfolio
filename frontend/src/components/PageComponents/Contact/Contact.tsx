@@ -21,9 +21,6 @@ const contactForm = getInputs<contactFormType>("contact");
 
 const Contact = () => {
  
-
-  
-
   const initialValues: contactFormType = {
     ...contactForm.initialValues,
   };
