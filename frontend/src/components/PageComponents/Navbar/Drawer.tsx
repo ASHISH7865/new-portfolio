@@ -13,7 +13,7 @@ const Drawer = ({NavLinks}  :any) => {
         <BsList className="text-[25px]" />
       </Button>
     </SheetTrigger>
-    <SheetContent className="flex justify-center items-center">
+    <SheetContent className="flex justify-center items-center backdrop-filter backdrop-blur-2xl bg-transparent">
      <NavMenu NavLinks={NavLinks} viewport={"mobile"} />
     </SheetContent>
   </Sheet>

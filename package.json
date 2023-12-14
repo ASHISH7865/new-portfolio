@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-backend" : "cd backend && npm install --force && npm run build"
+    "build-backend" : "cd backend && npm install --force && npm run build",
+    "build-frontend" : "cd frontend && npm install --force && npm run build",
+    "start:backend" : "cd backend && npm run develop",
+    "start:frontend" : "cd frontend && npm run dev"
   },
   "author": "",
   "license": "ISC"

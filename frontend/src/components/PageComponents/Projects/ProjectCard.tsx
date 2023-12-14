@@ -4,7 +4,6 @@ import Image from "next/image";
 import React from "react";
 
 const ProjectCard = (props: any) => {
-  console.log(props);
   return (
     <div className="dark:bg-[#131313] bg-[#e9ecef] p-4 rounded-2xl shadow-border [&>div>div>*]:hover:bg-opacity-0  ">
       <div className=" rounded-2xl">
