@@ -6,10 +6,10 @@ import ProjectCard from "@/components/PageComponents/Projects/ProjectCard";
 import ProjectSwiperCard from "./ProjectSwiperCard";
 import { FaCircleArrowLeft } from "react-icons/fa6";
 import { FaCircleArrowRight } from "react-icons/fa6";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
-
-
-const ProjectSwiper = ({featuredProject}:any) => {
+const ProjectSwiper = ({ featuredProject }: any) => {
   const [currentSlide, setCurrentSlide] = useState(featuredProject[0]);
   const handleSlideChange = (swiper: any) => {
     setCurrentSlide(featuredProject[swiper.realIndex]);
@@ -52,8 +52,6 @@ const ProjectSwiper = ({featuredProject}:any) => {
             return <ProjectSwiperCard key={i} {...obj} />;
           }}
         </SwiperWrapper>
-        {/* // when we change the slide, we want to change the content of the slide with fade animation */}
-
         <div
           className=" hidden md:flex  absolute h-[20vh] bottom-0 z-[1]  flex-col items-center 
         p-4  w-full  bg-opacity-60 transition-all duration-500   bg-gradient-to-b  dark:from-transparent dark:via-[#0b090a] dark:to-[#0b090a] from-transparent via-[#ffffffb9] to-[#ffffff]
@@ -62,6 +60,9 @@ const ProjectSwiper = ({featuredProject}:any) => {
         <div className="absolute -bottom-20 z-10 flex flex-col items-center p-4 rounded-2xl w-[90%] left-[5%] bg-opacity-60 transition-all duration-500">
           <p className="hidden md:block md:text-4xl lg:text-6xl font-semibold ">{currentSlide?.attributes?.title}</p>
           <p className="hidden md:block lg:text-xl font-medium w-[90%]  text-center mt-5">{currentSlide?.attributes?.description}</p>
+          <Link href={`/projects/${currentSlide?.attributes?.slug}`}>
+              <Button className="mt-5">View Project</Button>
+          </Link>
           <div className="flex  gap-20 justify-center items-center mt-10">
             <FaCircleArrowLeft className=" cursor-pointer text-3xl button-prev " />
             <FaCircleArrowRight className=" cursor-pointer text-3xl button-next" />

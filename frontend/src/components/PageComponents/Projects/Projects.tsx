@@ -5,7 +5,7 @@ const Projects = (props : any) => {
   return (
     <section id="projects">
       <FeaturedProject featuredProject={props.data.featuredProject} />
-      <ProjectList allProjects = {props.data.allProjects}/>
+      <ProjectList limit={3} allProjects = {props.data.allProjects}/>
     </section>
   );
 };

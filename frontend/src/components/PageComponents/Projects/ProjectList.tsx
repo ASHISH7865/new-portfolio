@@ -3,6 +3,7 @@ import React from "react";
 import ProjectCard from "./ProjectCard";
 import { Button } from "@/components/ui/button";
 import Section from "@/components/Common/Section";
+import SkeletonLoading from "./SkeletonLoading";
 
 const ProjectContent = [
   {
@@ -104,18 +105,19 @@ const ProjectContent = [
 
 const ProjectList = (props : any) => {
   return (
-    <Section className="mt-56">
+    <Section className={`${ props.limit ? 'mt-56' : 'mt-10'}`}>
       <SectionHeader text="Projects" />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-14 px-5 md:px-0  ">
         {props?.allProjects?.map((project : any, index : any) => (
-          <ProjectCard key={index} title={project.attributes?.title} description={project.attributes?.description} techStack={project?.attributes?.techStack} links={project?.attributes.Links} image={project.attributes?.image} />
+          <ProjectCard key={index} title={project.attributes?.title} description={project.attributes?.description} techStack={project?.attributes?.techStack} links={project?.attributes.Links} image={project?.attributes?.image} slug={project?.attributes?.slug} />
         ))}
       </div>
-      <div className="flex justify-center items-center">
+     {props.limit && <div className="flex justify-center items-center">
         <a className="text-md font-bold text-center  hover:text-blue-500" href="/projects">
           <Button>View All Projects</Button>
         </a>
-      </div>
+      </div>}
+    
     </Section>
   );
 };

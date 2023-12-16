@@ -1,43 +1,32 @@
-import ProjectCard from '@/components/PageComponents/Projects/ProjectCard'
-import React from 'react'
+import ProjectList from "@/components/PageComponents/Projects/ProjectList";
+import { FilterProjectDropdown } from "@/components/PageComponents/Projects/FilterProjectDropdown";
+import React from "react";
+import AllProjectList from "@/components/PageComponents/Projects/AllProjectList";
 
-const page = () => {
+const page = async () => {
+  const { data,categories } = await getServerSideProps();
+  
   return (
-    <div className="lg:w-[80%] w-full  m-auto">
-        <h1 className="text-3xl font-bold text-center my-14">Projects</h1>
+    <div className="p-5">
+      <AllProjectList allProjects={data.data} categories={categories} />
+    </div>
+  );
+};
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-14 px-5 md:px-0  ">
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-        </div>
-        <div className="flex justify-end items-end">
-          <a className="text-md font-bold text-center  hover:text-blue-500" href="/projects">
-            View All Projects --&gt;
-          </a>
-        </div>
-      </div>
-  )
+export default page;
+
+async function getServerSideProps() {
+  const url = process.env.NEXT_STRAPI_API_URL + "/api/";
+  const projectEndpoint = "projects?populate=deep";
+  const categoryEndpoint = "project-categories?populate=deep";
+  const res = await fetch(url + projectEndpoint);
+  const projectResponse = await res.json();
+
+  const res2 = await fetch(url + categoryEndpoint);
+  const categoryResponse = await res2.json();
+
+  return {
+    data: projectResponse,
+    categories: categoryResponse,
+  };
 }
-
-export default page

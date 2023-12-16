@@ -43,6 +43,15 @@
     "featured": {
       "type": "boolean",
       "default": false
+    },
+    "slug": {
+      "type": "string"
+    },
+    "project_categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::project-category.project-category",
+      "inversedBy": "projects"
     }
   }
 }

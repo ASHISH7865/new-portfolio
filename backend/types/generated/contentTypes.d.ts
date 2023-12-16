@@ -417,6 +417,12 @@ export interface ApiProjectProject extends Schema.CollectionType {
     techStack: Attribute.Component<'projects.tech-stack-tag'>;
     Links: Attribute.Component<'global.link', true>;
     featured: Attribute.Boolean & Attribute.DefaultTo<false>;
+    slug: Attribute.String;
+    project_categories: Attribute.Relation<
+      'api::project.project',
+      'manyToMany',
+      'api::project-category.project-category'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -449,6 +455,11 @@ export interface ApiProjectCategoryProjectCategory
   attributes: {
     name: Attribute.String;
     description: Attribute.Text;
+    projects: Attribute.Relation<
+      'api::project-category.project-category',
+      'manyToMany',
+      'api::project.project'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
