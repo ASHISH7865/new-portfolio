@@ -15,10 +15,19 @@
     "portfolioData": {
       "type": "dynamiczone",
       "components": [
-        "header.header-component",
         "hero.hero-component",
         "featuredskills.skill-component"
       ]
+    },
+    "header": {
+      "type": "component",
+      "repeatable": false,
+      "component": "header.header-component"
+    },
+    "Footer": {
+      "type": "component",
+      "repeatable": false,
+      "component": "footer.footer"
     }
   }
 }

@@ -18,12 +18,12 @@ const ProjectCard = ({ slug, title, description, techStack, links,image }: any) 
     <div  className="dark:bg-[#131313] bg-[#e9ecef] p-4 rounded-2xl shadow-border [&>div>div>*]:hover:bg-opacity-0  ">
       <div className=" rounded-2xl flex flex-col " >
         <div className="relative cursor-pointer" onClick={handleProjectClick} >
-          {/* <div
+          <div
             className=" rounded-2xl
-          w-full h-full absolute top-0 left-0 z-10 bg-black bg-opacity-60 transition-all duration-500
+          w-full h-full absolute top-0 left-0 z-10 bg-black bg-opacity-30 transition-all duration-500
           "
-          ></div> */}
-          <Image   className="rounded-2xl sm:min-h-[300px] " quality={100} src={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}${image.data.attributes.url}`} alt={"img"} width={1000} height={1000} />
+          ></div>
+          <Image className="rounded-2xl sm:h-[300px] " quality={100} src={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}${image?.data?.attributes?.url}`} alt={"img"} width={1000} height={1000} />
         </div>
         <div className="mt-4 flex flex-col">
           <p className="text-md sm:text-xl text-gray-700 dark:text-gray-300 font-bold text capitalize">{title}</p>
@@ -33,19 +33,19 @@ const ProjectCard = ({ slug, title, description, techStack, links,image }: any) 
             <div className="flex flex-wrap mt-2 gap-4 ">
               {techStack?.stack?.map((tech: any, index: number) => (
                 <Badge className="scale-95 md:scal-100 mr-2" key={index}>
-                  {tech.name}
+                  {tech?.name}
                 </Badge>
               ))}
             </div>
           </div>
           <div className="mt-4">
-            <p className="text-xs sm:text-sm">{links.length > 0 && "Links"}</p>
+            <p className="text-xs sm:text-sm">{links?.length > 0 && "Links"}</p>
             <div className="flex flex-wrap mt-2 gap-4  ">
               {links?.map((link: any, index: number) => (
-                <a href={link.url} className="" key={index} target="_blank">
+                <a href={link?.url} className="" key={index} target="_blank">
                   <Button className="text-xs sm:text-sm">
-                    {link.name === "Github" ? <FaGithubAlt className="inline mr-1" /> : <ImLink className="inline mr-1" />}
-                    {link.name}
+                    {link?.name === "Github" ? <FaGithubAlt className="inline mr-1" /> : <ImLink className="inline mr-1" />}
+                    {link?.name}
                   </Button>
                 </a>
               ))}

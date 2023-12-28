@@ -3,9 +3,9 @@ import Navbar from "@/components/PageComponents/Navbar/Navbar";
 import Skills from "@/components/PageComponents/Skills/Skills";
 import Projects from "@/components/PageComponents/Projects/Projects";
 import Contact from "@/components/PageComponents/Contact/Contact";
+import { getPortfolioComponent, getProjects, getFeaturedProjects } from "@/lib/request/getRequest";
 
 const componentMap = {
-  Header: Navbar,
   Hero: Hero,
   Skills: Skills,
   Projects: Projects,
@@ -22,47 +22,33 @@ export default async function Home() {
   });
 
   return (
-    <div className="max-w-screen-2xl mx-auto p-4">
-      {renderComponents?.length > 0 ? renderComponents : <h1> No Components Found</h1>}
-      <Contact />
-    </div>
+    data && (
+      <div className="max-w-screen-xl mx-auto ">
+        {renderComponents?.length > 0 ? renderComponents : <h1 className="text-center mt-20"> No Components Found</h1>}
+      </div>
+    )
   );
 }
 
 async function getServerSideProps() {
-  const url = process.env.NEXT_STRAPI_API_URL + "/api/";
-  const endpoint = "my-portfolio?populate=deep";
-  const projectEndpoint = "projects?populate=deep&pagination[limit]=3";
-  const featuredProjectEndpoint = "projects?populate=deep&filters[featured]=true";
-  const res = await fetch(url + endpoint);
-  const result = await res.json();
-  const data = result?.data?.attributes?.portfolioData;
+  const data = await getPortfolioComponent();
+  const AllProject = await getProjects(3);
+  const FeaturedProject = await getFeaturedProjects();
 
-  const AllProjectData = await fetch(url + projectEndpoint);
-  const AllProjectResult = await AllProjectData.json();
-  const AllProject = AllProjectResult?.data
-
-  const FeaturedProjectData = await fetch(url + featuredProjectEndpoint);
-  const FeaturedProjectResult = await FeaturedProjectData.json();
-  const FeaturedProject = FeaturedProjectResult?.data
-
-  
   const NewAllProject = {
     id: "all-projects",
     __component: "projects.all-projects",
     sectionHeader: "All Projects",
     data: {
       allProjects: AllProject,
-      featuredProject: FeaturedProject
+      featuredProject: FeaturedProject,
     },
     ComponentName: "Projects",
-  }
-  
-  
-  
-  data.push(NewAllProject)
-  
+  };
+
+  data?.push(NewAllProject);
+
   return {
-    data
-  }
+    data,
+  };
 }

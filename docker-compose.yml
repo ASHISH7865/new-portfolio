@@ -1,0 +1,52 @@
+# version: "3"
+# services:
+#   backend:
+#     build:
+#       context: ./backend
+#       container_name: docker_strapi_backend
+#       ports:
+#         - "1337:1337"
+#       enviroment:
+#         - NODE_ENV=development
+#       restart: always
+
+#   nginx:
+#     build:
+#       context: .
+#       dockerfile: ./nginx/Dockerfile
+#     container_name: docker-mern-nginx
+#     ports:
+#       - "80:80"           
+#     depends_on:
+#       - backend
+#     restart: always
+
+version: "3.8"
+networks:
+  ashish-portfolio:
+
+services:
+  strapi:
+    build: ./backend
+    ports:
+      - "1337:1337"
+    networks:
+      ashish-portfolio:
+        aliases:
+          - strapi.ashish-portfolio.com
+
+  next:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    networks:
+      ashish-portfolio:
+        aliases:
+          - next.ashish-portfolio.com
+
+
+# usefull docker commands
+# docker-compose up -d --build # to build and run the containers
+# docker-compose down # to stop the containers
+# docker-compose ps # to see the running containers
+# docker-compose logs -f # to see the logs of the containers

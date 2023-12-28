@@ -5,7 +5,7 @@ import Section from '@/components/Common/Section'
 
 const FeaturedProject = (props : any) => {
   return (
-    <Section> 
+    <Section id="featured-projects"> 
         <SectionHeader text="Featured Projects" />
         <ProjectSwiper featuredProject={props.featuredProject} />
       </Section>

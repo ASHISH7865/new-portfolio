@@ -4,21 +4,6 @@ import GroupSkill from "./GroupSkill";
 import SectionHeader from "@/components/Common/SectionHeader";
 import Section from "@/components/Common/Section";
 
-const GroupSkillData = [
-  {
-    title: "Frontend",
-    skillArray: ["React", "React Native", "NextJS", "TailwindCSS", "MaterialUI", "Bootstrap", "Shadcn"],
-  },
-  {
-    title: "Backend",
-    skillArray: ["NodeJS", "ExpressJS", "MongoDB", "RestApi", "Prisma"],
-  },
-  {
-    title: "Others",
-    skillArray: ["TypeScript", "JavaScript", "Git", "Github", "VSCode", "Linux", "Docker", "Heroku", "Netlify", "Vercel"],
-  },
-];
-
 const Skills = (props: any) => {
   return (
     <Section id="skills">

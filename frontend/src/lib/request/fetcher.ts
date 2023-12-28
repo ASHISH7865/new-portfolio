@@ -1,0 +1,34 @@
+import { FetcherOptions } from "./types";
+
+
+// const baseUrl: string =
+//   process.env.NEXT_PUBLIC_STRAPI_API_URL || 'http://127.0.0.1:1337';
+const baseUrl: string = 'http://127.0.0.1:1337';
+
+export async function fetcher(url: string, options: FetcherOptions = {}) {
+  const newUrl = `${baseUrl}/api/${url}`;
+  try {
+    let response: Response;
+    if (!options) {
+      response = await fetch(newUrl);
+    
+    } else {
+      response = await fetch(newUrl, {
+        headers: { Authorization: process.env.NEXT_PUBLIC_STRAPI_AUTH_KEY || '', ...options.headers },
+        ...options,
+      });
+    }
+
+    if (response.ok) {
+      const data = await response.json();
+      return data;
+    }
+
+    throw new Error(response.statusText);
+  } catch (error) {
+    // console.error(error);
+    return {
+      notFound: true,
+    };
+  }
+}

@@ -54,16 +54,17 @@ const ProjectSwiper = ({ featuredProject }: any) => {
         </SwiperWrapper>
         <div
           className=" hidden md:flex  absolute h-[20vh] bottom-0 z-[1]  flex-col items-center 
-        p-4  w-full  bg-opacity-60 transition-all duration-500   bg-gradient-to-b  dark:from-transparent dark:via-[#0b090a] dark:to-[#0b090a] from-transparent via-[#ffffffb9] to-[#ffffff]
+        p-4  w-full  bg-opacity-60 transition-all duration-500   bg-gradient-to-b  dark:from-transparent dark:via-[#000000] dark:to-[#0b090a] from-transparent via-[#ffffffb9] to-[#ffffff]
         "
         ></div>
-        <div className="absolute -bottom-20 z-10 flex flex-col items-center p-4 rounded-2xl w-[90%] left-[5%] bg-opacity-60 transition-all duration-500">
-          <p className="hidden md:block md:text-4xl lg:text-6xl font-semibold ">{currentSlide?.attributes?.title}</p>
+        <div className="absolute md:-bottom-20 z-10 flex flex-col md:items-center p-4 rounded-2xl w-[90%] md:left-[5%] bg-opacity-60 transition-all duration-500">
+         
+          <p className="hidden md:block md:text-4xl lg:text-6xl font-semibold [text-shadow:_0_0_50px_rgb(0_0_0_/_90%)] ">{currentSlide?.attributes?.title}</p>
           <p className="hidden md:block lg:text-xl font-medium w-[90%]  text-center mt-5">{currentSlide?.attributes?.description}</p>
           <Link href={`/projects/${currentSlide?.attributes?.slug}`}>
               <Button className="mt-5">View Project</Button>
           </Link>
-          <div className="flex  gap-20 justify-center items-center mt-10">
+          <div className="flex gap-20 justify-center items-center mt-10">
             <FaCircleArrowLeft className=" cursor-pointer text-3xl button-prev " />
             <FaCircleArrowRight className=" cursor-pointer text-3xl button-next" />
           </div>

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_about_me_about_me_infos",
+  "info": {
+    "displayName": "About Me Info"
+  },
+  "options": {},
+  "attributes": {
+    "key": {
+      "type": "string"
+    },
+    "value": {
+      "type": "text"
+    }
+  }
+}

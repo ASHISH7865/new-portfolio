@@ -1,0 +1,46 @@
+{
+  "collectionName": "components_about_me_valorant_infos",
+  "info": {
+    "displayName": "Valorant Info"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "gameName": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "overview": {
+      "type": "text"
+    },
+    "popularity": {
+      "type": "string"
+    },
+    "popularityText": {
+      "type": "string"
+    },
+    "release": {
+      "type": "string"
+    },
+    "releaseText": {
+      "type": "string"
+    },
+    "playingTime": {
+      "type": "string"
+    },
+    "playingTimeText": {
+      "type": "string"
+    }
+  }
+}

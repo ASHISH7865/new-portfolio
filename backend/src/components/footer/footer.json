@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_footer_footers",
+  "info": {
+    "displayName": "Footer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "link": {
+      "displayName": "Social Links",
+      "type": "component",
+      "repeatable": true,
+      "component": "footer.social-links"
+    },
+    "contactForm": {
+      "type": "boolean"
+    },
+    "ComponentName": {
+      "type": "string"
+    }
+  }
+}

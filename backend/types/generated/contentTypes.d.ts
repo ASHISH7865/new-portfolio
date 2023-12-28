@@ -362,6 +362,39 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
+export interface ApiAboutAbout extends Schema.SingleType {
+  collectionName: 'abouts';
+  info: {
+    singularName: 'about';
+    pluralName: 'abouts';
+    displayName: 'About';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    info: Attribute.Component<'about-me.about-me-info', true>;
+    favouriteMusic: Attribute.Component<'about-me.music-component', true>;
+    valorantInfo: Attribute.Component<'about-me.valorant-info'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::about.about',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::about.about',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiMyPortfolioMyPortfolio extends Schema.SingleType {
   collectionName: 'my_portfolios';
   info: {
@@ -375,12 +408,10 @@ export interface ApiMyPortfolioMyPortfolio extends Schema.SingleType {
   };
   attributes: {
     portfolioData: Attribute.DynamicZone<
-      [
-        'header.header-component',
-        'hero.hero-component',
-        'featuredskills.skill-component'
-      ]
+      ['hero.hero-component', 'featuredskills.skill-component']
     >;
+    header: Attribute.Component<'header.header-component'>;
+    Footer: Attribute.Component<'footer.footer'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -803,6 +834,7 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
+      'api::about.about': ApiAboutAbout;
       'api::my-portfolio.my-portfolio': ApiMyPortfolioMyPortfolio;
       'api::project.project': ApiProjectProject;
       'api::project-category.project-category': ApiProjectCategoryProjectCategory;

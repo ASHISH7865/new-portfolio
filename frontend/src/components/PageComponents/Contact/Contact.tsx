@@ -1,12 +1,8 @@
 "use client";
 import Section from "@/components/Common/Section";
-import SectionHeader from "@/components/Common/SectionHeader";
-
 import { getInputs } from "@/lib/form/getInput";
 import { FormComponent } from "@/components/Common/form/FormComponent";
 import SocialLinks from "@/components/Common/SocialLinks";
-import { useToast } from "@/components/ui/use-toast";
-import { useState } from "react";
 
 interface contactFormType {
   name: string;
@@ -26,7 +22,7 @@ const Contact = () => {
   };
 
   return (
-    <Section id="contact" className="px-5 py-5   rounded-2xl mt-20 bg-primary-foreground dark:bg-[#1a1a1a] shadow-border">
+    <Section id="contact" className="px-5 py-5 max-w-screen-xl mx-auto  rounded-2xl mt-20   shadow-border">
       <div className="flex justify-between items-center ">
         <SocialLinks />
         <FormComponent

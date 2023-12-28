@@ -7,7 +7,7 @@ interface SectionProps extends HTMLAttributes<HTMLElement> {
 
 const Section: React.FC<SectionProps> = ({ id, children,className, ...rest }) => {
   return (
-    <section id={id} className={`lg:w-[90%] xl:w-[80%] w-full m-auto mb-5 ${className}`} {...rest}>
+    <section id={id} className={` w-full m-auto mb-5 ${className}`} {...rest}>
       {children}
     </section>
   );
