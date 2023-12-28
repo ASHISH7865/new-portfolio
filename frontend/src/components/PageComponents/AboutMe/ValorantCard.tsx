@@ -36,7 +36,7 @@ const ValorantCard1 = {
 };
 
 const ValorantCard = ({ ValorantCardData }: { ValorantCardData: ValorantCardDataProps }) => {
-  const image = process.env.NEXT_PUBLIC_STRAPI_API_URL + ValorantCardData?.image?.data?.attributes?.url;
+  const image =  ValorantCardData?.image?.data &&   ValorantCardData?.image?.data?.attributes?.url;
   return (
     <div className="">
       <div className=" rounded-xl  flex flex-col items-center justify-center  ">

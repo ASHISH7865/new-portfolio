@@ -6,55 +6,55 @@ import ValorantCard from "@/components/PageComponents/AboutMe/ValorantCard";
 import { getAboutPageData } from "@/lib/request/getRequest";
 import React from "react";
 
-const AboutMe = [
-  { key: "About Me", value: "Hello there! I'm Ashish, a passionate 24-year-old software engineer based in the vibrant city of Noida, India. I find joy in crafting digital experiences and solving complex problems through code." },
-  {
-    key: "professional Background",
-    value:
-      "I'm a front-end developer who specializes in Next.js and React. My tech journey includes learning about backend technologies like Node.js, Express, MongoDB, and Prisma. This broad skill set helps me work smoothly across the entire software development process.",
-  },
-  {
-    key: "experience",
-    value:
-      "I've been working with React for about 2 years, focusing on getting better and learning more. This experience has not only improved my technical skills but also helped me understand how to build web apps that are both scalable and efficient.",
-  },
-  {
-    key: "current Focus",
-    value:
-      "Currently, my focus centers on React and Next.js for front-end development. I'm actively exploring backend technologies and aiming to skill up in Node.js and Rust. Additionally, I'm eager to learn DevOps practices to enhance deployment and system maintenance. This blend of front-end expertise, backend aspirations, and DevOps interest reflects my commitment to a well-rounded skill set in web development.",
-  },
-];
+// const AboutMe = [
+//   { key: "About Me", value: "Hello there! I'm Ashish, a passionate 24-year-old software engineer based in the vibrant city of Noida, India. I find joy in crafting digital experiences and solving complex problems through code." },
+//   {
+//     key: "professional Background",
+//     value:
+//       "I'm a front-end developer who specializes in Next.js and React. My tech journey includes learning about backend technologies like Node.js, Express, MongoDB, and Prisma. This broad skill set helps me work smoothly across the entire software development process.",
+//   },
+//   {
+//     key: "experience",
+//     value:
+//       "I've been working with React for about 2 years, focusing on getting better and learning more. This experience has not only improved my technical skills but also helped me understand how to build web apps that are both scalable and efficient.",
+//   },
+//   {
+//     key: "current Focus",
+//     value:
+//       "Currently, my focus centers on React and Next.js for front-end development. I'm actively exploring backend technologies and aiming to skill up in Node.js and Rust. Additionally, I'm eager to learn DevOps practices to enhance deployment and system maintenance. This blend of front-end expertise, backend aspirations, and DevOps interest reflects my commitment to a well-rounded skill set in web development.",
+//   },
+// ];
 
-const MusicList = [
-  {
-    name: "Tum hi ho",
-    author: "Arijit Singh",
-    image: "/songs/thumbnail/song4.jpg",
-    audio: "/songs/audio/song4.mp3",
-    duration: 262,
-  },
-  {
-    name: "Apna Bana Le",
-    author: "Arijit Singh",
-    image: "/songs/thumbnail/song1.jpg",
-    audio: "/songs/audio/song1.mp3",
-    duration: 204,
-  },
-  {
-    name: "Mai rang sharbaton ka",
-    author: "Arijit Singh",
-    image: "/songs/thumbnail/song3.jpg",
-    audio: "/songs/audio/song3.mp3",
-    duration: 270,
-  },
-  {
-    name: "Dil ibadat",
-    author: "K.K",
-    image: "/songs/thumbnail/song2.jpg",
-    audio: "/songs/audio/song2.mp3",
-    duration: 329,
-  },
-];
+// const MusicList = [
+//   {
+//     name: "Tum hi ho",
+//     author: "Arijit Singh",
+//     image: "/songs/thumbnail/song4.jpg",
+//     audio: "/songs/audio/song4.mp3",
+//     duration: 262,
+//   },
+//   {
+//     name: "Apna Bana Le",
+//     author: "Arijit Singh",
+//     image: "/songs/thumbnail/song1.jpg",
+//     audio: "/songs/audio/song1.mp3",
+//     duration: 204,
+//   },
+//   {
+//     name: "Mai rang sharbaton ka",
+//     author: "Arijit Singh",
+//     image: "/songs/thumbnail/song3.jpg",
+//     audio: "/songs/audio/song3.mp3",
+//     duration: 270,
+//   },
+//   {
+//     name: "Dil ibadat",
+//     author: "K.K",
+//     image: "/songs/thumbnail/song2.jpg",
+//     audio: "/songs/audio/song2.mp3",
+//     duration: 329,
+//   },
+// ];
 
 const DynamicTabData = [
   {

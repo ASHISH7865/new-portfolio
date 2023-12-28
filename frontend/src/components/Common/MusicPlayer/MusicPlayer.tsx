@@ -66,7 +66,7 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({ musicList }: MusicPlayerProps
   };
   const updatePlayer = () => {
     if (audioRef.current) {
-      audioRef.current.src = process.env.NEXT_PUBLIC_STRAPI_API_URL + musicList[index]?.audio?.data?.attributes?.url;
+      audioRef.current.src =  musicList[index]?.audio?.data?.attributes?.url;
       audioRef.current.load();
     }
   };
@@ -153,9 +153,7 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({ musicList }: MusicPlayerProps
     <div className={`${styles.card}`}>
       <div className={`${styles.currentSong}`}>
         <audio ref={audioRef} />
-        <div className={styles.imgWrap}>
-          <Image src={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}${musicList[index]?.image?.data?.attributes?.url}`} alt={musicList[index].name} width={100} height={100} />
-        </div>
+        <div className={styles.imgWrap}>{musicList[index]?.image?.data && <Image src={`${musicList[index]?.image?.data?.attributes?.url}`} alt={musicList[index].name} width={100} height={100} />} </div>
         <span className={`${styles.songName} font-bold`}>{musicList[index].name}</span>
         <span className={`${styles.songAuthor} font-normal`}>{musicList[index].author}</span>
         <div className={styles.time}>
@@ -163,14 +161,7 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({ musicList }: MusicPlayerProps
           {/* <div id="timeline" className="timeline w-full dark:bg-black bg-gray-400  h-1 rounded-md cursor-pointer " ref={timelineRef}>
             <div id="playhead" className="playhead dark:bg-white bg-[#333333]  h-1 rounded-md" style={{ width: `${(currentTime / musicList[index].duration) * 100}% ` }}></div>
           </div> */}
-          <Slider
-          ref={timelineRef}
-            value={[(currentTime / musicList[index].duration) * 100]}
-            max={100}
-            step={0.1}
-            className={`h-1 rounded-md cursor-pointer `}
-            
-          />
+          <Slider ref={timelineRef} value={[(currentTime / musicList[index].duration) * 100]} max={100} step={0.1} className={`h-1 rounded-md cursor-pointer `} />
           <div className={styles.endTime}>{formatTime(musicList[index].duration)}</div>
         </div>
 
@@ -190,7 +181,7 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({ musicList }: MusicPlayerProps
       <div className={styles.playList}>
         {musicList.map((music, i) => (
           <div key={i} className={`${styles.track}${i === index && !pause ? ` ${styles.currentAudio}  ` : ""} ${i === index && pause ? ` ${styles.playNow}  shadow-border ` : ""} p-2`} onClick={() => clickAudio(i)}>
-            <Image className={styles.trackImg} src={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}${music?.image?.data?.attributes?.url}`} alt={music.name} width={50} height={50} />
+            {music?.image?.data && <Image className={styles.trackImg} src={`${music?.image?.data?.attributes?.url}`} alt={music.name} width={50} height={50} />}{" "}
             <div className={styles.trackDiscr}>
               <span className={`${styles.trackName} font-bold`}>{music.name}</span>
               <span className={styles.trackAuthor}>{music.author}</span>

@@ -13,6 +13,9 @@ const nextConfig = {
         },{
             protocol:"https",
             hostname:"ashish-portfolio-6fd7.onrender.com"
+        },{
+            protocol:"https",
+            hostname:"res.cloudinary.com"
         }
     ]
    }
