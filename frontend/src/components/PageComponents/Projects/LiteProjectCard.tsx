@@ -12,7 +12,7 @@ const LiteProjectCard = ({ slug, title, description, techStack, links, image }: 
     router.push(`/projects/${slug}`);
   };
   return (
-    <div  className="group   px-10 py-6 rounded-md shadow-border  transform hover:-translate-y-2 cursor-pointer transition-all duration-200">
+    <div  className="group   px-10 py-6 rounded-md shadow-border  transform hover:-translate-y-2  transition-all duration-200">
       <div className="mt-4 flex justify-between items-center">
         <div>
           <CiFolderOn className="text-5xl group-hover:text-blue-500" />
@@ -23,7 +23,7 @@ const LiteProjectCard = ({ slug, title, description, techStack, links, image }: 
               {link?.name === "Github" ? <FiGithub className="inline mr-1 text-xl hover:text-blue-500" /> : <FiExternalLink className="inline mr-1 text-xl hover:text-blue-500" />}
             </a>
           ))}
-          <LuFileSymlink className="text-xl hover:text-blue-500" onClick={handleProjectClick} />
+          {/* <LuFileSymlink className="text-xl hover:text-blue-500" onClick={handleProjectClick} /> */}
         </div>
       </div>
       <div className="mt-8 flex flex-col justify-between ">

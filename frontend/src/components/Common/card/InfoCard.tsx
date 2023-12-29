@@ -8,9 +8,9 @@ interface InfoCardProps {
 
 const InfoCard = ({ children , cardTitle , className  }: InfoCardProps) => {
   return (
-    <div className={className}>
-      <h2 className="text-xl font-bold mb-4 capitalize">{cardTitle}</h2>
-      <div className="p-6 rounded-md shadow-border">{children}</div>
+    <div className={`${className} shadow-border p-6 rounded-lg group transform hover:-translate-y-2  transition-all duration-200 h-full`}>
+      <h2 className="text-xl font-bold mb-4 capitalize dark:text-gray-300">{cardTitle}</h2>
+      <div className="dark:text-gray-400">{children}</div>
     </div>
   );
 };

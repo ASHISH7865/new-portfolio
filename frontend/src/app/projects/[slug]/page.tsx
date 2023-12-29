@@ -4,6 +4,14 @@ import Section from "@/components/Common/Section";
 import InfoCard from "@/components/Common/card/InfoCard";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { Metadata } from "next";
+
+
+export const metadata: Metadata = {
+  title: "Ashish Portfolio | Project Detail",
+  description: "Ashish Portfolio",
+};
+
 
 import Image from "next/image";
 
@@ -46,92 +54,94 @@ const ProjectDetail = () => {
   const { title, description, imageUrl, challenges, solution, technologies, features, outcome, codeRepository, demoLink, timeline, futureEnhancements } = projectData[0];
 
   return (
-    <Section className="max-w-screen-xl mx-auto mt-10">
-      <h1 className="text-4xl font-bold mb-4">{title}</h1>
-      <div className=" grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="md:col-span-1 space-y-4  shadow-border rounded-2xl ">
-          <div className=" rounded-lg overflow-hidden">
-            <Image src={imageUrl} alt={title} className="object-cover transition-transform transform w-full h-96 hover:scale-105 duration-300 ease-in-out" width={500} height={500} />
-          </div>
-          <div className=" p-6 rounded-2xl ">
-            <h2 className="text-2xl font-bold mb-4">Features</h2>
-            <ul className=" flex gap-4 flex-wrap">
-              {features.map((feature, index) => (
-                <Badge key={index}>{feature}</Badge>
-              ))}
-            </ul>
-          </div>
-        </div>
+    <div className="h-[50vh] flex justify-center items-center">
+      This page is under construction
+    </div>
+    // <Section className="max-w-screen-xl mx-auto mt-10">
+    //   <h1 className="text-4xl font-bold mb-4">{title}</h1>
+    //   <div className=" grid grid-cols-1 md:grid-cols-2 gap-8">
+    //     <div className="md:col-span-1 space-y-4  shadow-border rounded-2xl ">
+    //       <div className=" rounded-lg overflow-hidden">
+    //         <Image src={imageUrl} alt={title} className="object-cover transition-transform transform w-full h-96 hover:scale-105 duration-300 ease-in-out" width={500} height={500} />
+    //       </div>
+    //       <div className=" p-6 rounded-2xl ">
+    //         <h2 className="text-2xl font-bold mb-4">Features</h2>
+    //         <ul className=" flex gap-4 flex-wrap">
+    //           {features.map((feature, index) => (
+    //             <Badge key={index}>{feature}</Badge>
+    //           ))}
+    //         </ul>
+    //       </div>
+    //     </div>
 
-        <div className="md:col-span-1 shadow-border rounded-2xl ">
-          <div className=" p-6 rounded-md ">
-            <h2 className="text-2xl font-bold mb-4">Project Overview</h2>
+    //     <div className="md:col-span-1 shadow-border rounded-2xl ">
+    //       <div className=" p-6 rounded-md ">
+    //         <h2 className="text-2xl font-bold mb-4  dark:text-gray-300">Project Overview</h2>
+    //         <p className=" dark:text-gray-400">{description}</p>
+    //       </div>
+    //       <Separator orientation="horizontal" />
+    //       <div className=" p-6 rounded-md ">
+    //         <h2 className="text-2xl font-bold mb-4 dark:text-gray-300">Challenges</h2>
+    //         <p className="dark:text-gray-400">{challenges}</p>
+    //       </div>
+    //       <Separator orientation="horizontal" />
+    //       <div className=" p-6 rounded-md ">
+    //         <h2 className="text-2xl font-bold mb-4 dark:text-gray-300">Solution</h2>
+    //         <p className="dark:text-gray-400">{solution}</p>
+    //       </div>
+    //       <Separator orientation="horizontal" />
+    //       <div className=" p-6 rounded-md ">
+    //         <h2 className="text-2xl font-bold mb-4 dark:text-gray-300">Technologies Used</h2>
+    //         <div className="flex gap-5 flex-wrap">
+    //           {technologies.map((item, index) => (
+    //             <Badge className="dark:bg-gray-300" key={index}>{item}</Badge>
+    //           ))}
+    //         </div>
+    //       </div>
+    //       <div className="p-6 rounded-md ">
+    //         <h2 className="text-2xl font-bold mb-4">Timeline</h2>
+    //         <Badge>{timeline}</Badge>
+    //       </div>
+    //     </div>
+    //   </div>
 
-            <p>{description}</p>
-          </div>
-          <Separator orientation="horizontal" />
-          <div className=" p-6 rounded-md ">
-            <h2 className="text-2xl font-bold mb-4">Challenges</h2>
-            <p>{challenges}</p>
-          </div>
-          <Separator orientation="horizontal" />
-          <div className=" p-6 rounded-md ">
-            <h2 className="text-2xl font-bold mb-4">Solution</h2>
-            <p>{solution}</p>
-          </div>
-          <Separator orientation="horizontal" />
-          <div className=" p-6 rounded-md ">
-            <h2 className="text-2xl font-bold mb-4">Technologies Used</h2>
-            <div className="flex gap-5 flex-wrap">
-              {technologies.map((item, index) => (
-                <Badge key={index}>{item}</Badge>
-              ))}
-            </div>
-          </div>
-          <div className="p-6 rounded-md ">
-            <h2 className="text-2xl font-bold mb-4">Timeline</h2>
-            <Badge>{timeline}</Badge>
-          </div>
-        </div>
-      </div>
+    //   <div className=" mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+    //     <div className=" col-span-3 md:col-span-1 row-span-full">
+    //       <InfoCard cardTitle="Project Outcome">
+    //         <p>{outcome}</p>
+    //       </InfoCard>
+    //     </div>
 
-      <div className=" mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-        <div className=" col-span-3 md:col-span-1 row-span-full">
-          <InfoCard cardTitle="Project Outcome">
-            <p>{outcome}</p>
-          </InfoCard>
-        </div>
+    //     <div className="col-span-3 md:col-span-1">
+    //       <InfoCard cardTitle="Project Details">
+    //         <p className="text-sm">Click the link below to view the project repository on GitHub.</p>
+    //         <a href={codeRepository} target="_blank" rel="noopener noreferrer" className="text-blue-500 text-lg mt-5 hover:underline">
+    //           {codeRepository}
+    //         </a>
+    //       </InfoCard>
+    //     </div>
 
-        <div className="col-span-3 md:col-span-1">
-          <InfoCard cardTitle="Project Details">
-            <p className="text-sm">Click the link below to view the project repository on GitHub.</p>
-            <a href={codeRepository} target="_blank" rel="noopener noreferrer" className="text-blue-500 text-lg mt-5 hover:underline">
-              {codeRepository}
-            </a>
-          </InfoCard>
-        </div>
+    //     <div className=" col-span-3 md:col-span-1 row-span-2 ">
+    //       <InfoCard cardTitle="Project Demo">
+    //         <p className="text-sm">Click the link below to view the project demo.</p>
+    //         <a href={demoLink} target="_blank" rel="noopener noreferrer" className="text-blue-500 text-lg mt-5 hover:underline">
+    //           {demoLink}
+    //         </a>
+    //         <div className="mt-10">
+    //           <h4>Demo Account</h4>
+    //           <p>Username : aklshfkasjdlkajsd</p>
+    //           <p>Password : sklfjksjfksdjfklsdj</p>
+    //         </div>
+    //       </InfoCard>
+    //     </div>
 
-        <div className=" col-span-3 md:col-span-1 row-span-2 ">
-          <InfoCard cardTitle="Project Demo">
-            <p className="text-sm">Click the link below to view the project demo.</p>
-            <a href={demoLink} target="_blank" rel="noopener noreferrer" className="text-blue-500 text-lg mt-5 hover:underline">
-              {demoLink}
-            </a>
-            <div className="mt-10">
-              <h4>Demo Account</h4>
-              <p>Username : aklshfkasjdlkajsd</p>
-              <p>Password : sklfjksjfksdjfklsdj</p>
-            </div>
-          </InfoCard>
-        </div>
-
-        <div className=" md:col-span-2 col-span-3">
-          <InfoCard cardTitle="Future Enhancements">
-            <p>{futureEnhancements}</p>
-          </InfoCard>
-        </div>
-      </div>
-    </Section>
+    //     <div className=" md:col-span-2 col-span-3">
+    //       <InfoCard cardTitle="Future Enhancements">
+    //         <p>{futureEnhancements}</p>
+    //       </InfoCard>
+    //     </div>
+    //   </div>
+    // </Section>
   );
 };
 

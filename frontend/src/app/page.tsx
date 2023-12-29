@@ -4,11 +4,17 @@ import Skills from "@/components/PageComponents/Skills/Skills";
 import Projects from "@/components/PageComponents/Projects/Projects";
 import Contact from "@/components/PageComponents/Contact/Contact";
 import { getPortfolioComponent, getProjects, getFeaturedProjects } from "@/lib/request/getRequest";
+import { Metadata } from "next";
 
 const componentMap = {
   Hero: Hero,
   Skills: Skills,
   Projects: Projects,
+};
+
+export const metadata: Metadata = {
+  title: "Ashish Portfolio | Home",
+  description: "Ashish Portfolio",
 };
 
 export default async function Home() {
@@ -23,6 +29,7 @@ export default async function Home() {
 
   return (
     data && (
+      
       <div className="max-w-screen-xl mx-auto ">
         {renderComponents?.length > 0 ? renderComponents : <h1 className="text-center mt-20"> No Components Found</h1>}
       </div>

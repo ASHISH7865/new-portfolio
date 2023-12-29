@@ -5,6 +5,14 @@ import AboutMeCard from "@/components/PageComponents/AboutMe/AboutMeCard";
 import ValorantCard from "@/components/PageComponents/AboutMe/ValorantCard";
 import { getAboutPageData } from "@/lib/request/getRequest";
 import React from "react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Ashish Portfolio | About",
+  description: "Ashish Portfolio",
+};
+
+
 
 // const AboutMe = [
 //   { key: "About Me", value: "Hello there! I'm Ashish, a passionate 24-year-old software engineer based in the vibrant city of Noida, India. I find joy in crafting digital experiences and solving complex problems through code." },
@@ -108,7 +116,7 @@ const page = async () => {
       <div className=" grid grid-cols-1 md:grid-cols-3 gap-8">
         <div className="grid grid-cols-1 md:grid-cols-2 md:col-span-2 gap-8">
           {data?.aboutMeInfo?.map((data : any) => (
-            <InfoCard className="col-span-1" key={data.key} cardTitle={data.key}>
+            <InfoCard className="col-span-1 " key={data.key} cardTitle={data.key}>
               <p className="my-4 ">{data.value}</p>
             </InfoCard>
           ))}
