@@ -10,7 +10,7 @@ export async function fetcher(url: string, options: FetcherOptions = {}) {
   try {
     let response: Response;
     if (!options) {
-      response = await fetch(newUrl);
+      response = await fetch(newUrl , {next : {revalidate : 2}});
     
     } else {
       response = await fetch(newUrl, {
