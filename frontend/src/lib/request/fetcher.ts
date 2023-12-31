@@ -16,6 +16,7 @@ export async function fetcher(url: string, options: FetcherOptions = {}) {
       response = await fetch(newUrl, {
         headers: { Authorization: process.env.NEXT_PUBLIC_STRAPI_AUTH_KEY || '', ...options.headers },
         ...options,
+        next : {revalidate : 2}
       });
     }
 

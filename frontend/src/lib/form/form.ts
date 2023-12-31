@@ -10,14 +10,15 @@ export const forms: { [key in FormSection]: InputProps[] } = {
       value: "",
       validations: [
         {
+          type: "required",
+          message: "Name is required",
+        },
+        {
           type: "minLength",
           value: 3,
           message: "Name must be at least 3 characters long",
         },
-        {
-          type: "required",
-          message: "Name is required",
-        },
+      
       ],
     },
     {
@@ -48,6 +49,11 @@ export const forms: { [key in FormSection]: InputProps[] } = {
           type: "required",
           message: "Phone number is required",
         },
+        {
+          type: "isPhoneNumber",
+          message: "Phone number is not valid (10 digits)",
+        },
+     
       ],
     },
     {

@@ -82,3 +82,18 @@ export const getAboutPageData = async () => {
         throw new Error("Error fetching about page data");
     }
 }
+
+export const sendFormDetails = async (data  : any) => {
+    const endpoint = "/api/email";
+    const response = await fetch(endpoint, {
+        method: "POST",
+        body: JSON.stringify(data),
+    });
+
+    if (response.ok) {
+        return response.json();
+    }
+    else {
+        throw new Error("Error sending form details");
+    }
+}

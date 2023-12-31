@@ -54,15 +54,14 @@ const ProjectSwiper = ({ featuredProject }: any) => {
         </SwiperWrapper>
         <div
           className=" hidden md:flex  absolute h-[20vh] bottom-0 z-[1]  flex-col items-center 
-        p-4  w-full  bg-opacity-60 transition-all duration-500   bg-gradient-to-b  dark:from-transparent dark:via-[#000000] dark:to-[#0b090a] from-transparent via-[#ffffffb9] to-[#ffffff]
+        p-4  w-full  bg-opacity-60 transition-all duration-500   bg-gradient-to-b  dark:from-transparent dark:via-[#000000] dark:to-[#0b090a] from-transparent via-[#ffffff]  to-[#ffffff]
         "
         ></div>
-        <div className="absolute md:-bottom-20 z-10 flex flex-col md:items-center p-4 rounded-2xl w-[90%] md:left-[5%] bg-opacity-60 transition-all duration-500">
-         
-          <p className="hidden md:block md:text-4xl lg:text-6xl font-semibold [text-shadow:_0_0_50px_rgb(0_0_0_/_90%)] ">{currentSlide?.attributes?.title}</p>
+        <div className="absolute w-full  md:-bottom-20 z-10 flex flex-col md:items-center p-4 rounded-2xl md:w-[90%] md:left-[5%] bg-opacity-60 transition-all duration-500">
+          <p className="hidden md:block md:text-4xl lg:text-6xl font-semibold dark:[text-shadow:_4px_3px_5px_rgb(0_0_0_/_90%)] [text-shadow:_4px_3px_5px_rgb(255_255_255_/_90%)]">{currentSlide?.attributes?.title}</p>
           <p className="hidden md:block lg:text-xl font-medium w-[90%]  text-center mt-5">{currentSlide?.attributes?.description}</p>
           <Link href={`/projects/${currentSlide?.attributes?.slug}`}>
-              <Button className="mt-5">View Project</Button>
+            <Button className="mt-5">View Project</Button>
           </Link>
           <div className="flex gap-20 justify-center items-center mt-10">
             <FaCircleArrowLeft className=" cursor-pointer text-3xl button-prev " />

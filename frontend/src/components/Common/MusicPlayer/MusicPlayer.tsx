@@ -37,7 +37,6 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({ musicList }: MusicPlayerProps
   };
 
   const hoverTimeLine = (e: any) => {
-    console.log(e);
     if (timelineRef.current) {
       const percent = e.offsetX / timelineRef.current.offsetWidth;
       const time = percent * musicList[index].duration;
@@ -116,7 +115,6 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({ musicList }: MusicPlayerProps
   useEffect(() => {
     updatePlayer();
     const timeInterval = setInterval(timeUpdate, 1000);
-    console.log("timeInterval", timeInterval);
     const currnetAudioRef = audioRef.current;
     const currentTimelineRef = timelineRef.current;
 

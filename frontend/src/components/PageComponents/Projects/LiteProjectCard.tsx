@@ -29,7 +29,7 @@ const LiteProjectCard = ({ slug, title, description, techStack, links, image }: 
       <div className="mt-8 flex flex-col justify-between ">
         <div>
           <h3 className="text-md sm:text-2xl text-gray-700 dark:text-gray-300 font-bold text capitalize group-hover:text-blue-500">{title}</h3>
-          <p className="text-sm sm:text-md text-gray-800 dark:text-gray-400 font-medium capitalize mt-2 line-clamp-3 min-h-[40px] leading-6">{description}</p>
+          <p className="text-sm sm:text-md text-gray-800 dark:text-gray-400 font-medium capitalize mt-2 line-clamp-4 min-h-[40px] leading-6">{description}</p>
         </div>
         <div className="mt-10  items-end">
           <div className="flex flex-wrap mt-2 gap-4 ">

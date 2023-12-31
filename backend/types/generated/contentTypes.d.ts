@@ -362,153 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiAboutAbout extends Schema.SingleType {
-  collectionName: 'abouts';
-  info: {
-    singularName: 'about';
-    pluralName: 'abouts';
-    displayName: 'About';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    info: Attribute.Component<'about-me.about-me-info', true>;
-    favouriteMusic: Attribute.Component<'about-me.music-component', true>;
-    valorantInfo: Attribute.Component<'about-me.valorant-info'>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::about.about',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::about.about',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiMyPortfolioMyPortfolio extends Schema.SingleType {
-  collectionName: 'my_portfolios';
-  info: {
-    singularName: 'my-portfolio';
-    pluralName: 'my-portfolios';
-    displayName: 'my-portfolio';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    portfolioData: Attribute.DynamicZone<
-      ['hero.hero-component', 'featuredskills.skill-component']
-    >;
-    header: Attribute.Component<'header.header-component'>;
-    Footer: Attribute.Component<'footer.footer'>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::my-portfolio.my-portfolio',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::my-portfolio.my-portfolio',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiProjectProject extends Schema.CollectionType {
-  collectionName: 'projects';
-  info: {
-    singularName: 'project';
-    pluralName: 'projects';
-    displayName: 'Project';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Attribute.String;
-    description: Attribute.Text;
-    image: Attribute.Media;
-    techStack: Attribute.Component<'projects.tech-stack-tag'>;
-    Links: Attribute.Component<'global.link', true>;
-    featured: Attribute.Boolean & Attribute.DefaultTo<false>;
-    slug: Attribute.String;
-    project_categories: Attribute.Relation<
-      'api::project.project',
-      'manyToMany',
-      'api::project-category.project-category'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::project.project',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::project.project',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiProjectCategoryProjectCategory
-  extends Schema.CollectionType {
-  collectionName: 'project_categories';
-  info: {
-    singularName: 'project-category';
-    pluralName: 'project-categories';
-    displayName: 'Project Category';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    name: Attribute.String;
-    description: Attribute.Text;
-    projects: Attribute.Relation<
-      'api::project-category.project-category',
-      'manyToMany',
-      'api::project.project'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::project-category.project-category',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::project-category.project-category',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -824,6 +677,153 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiAboutAbout extends Schema.SingleType {
+  collectionName: 'abouts';
+  info: {
+    singularName: 'about';
+    pluralName: 'abouts';
+    displayName: 'About';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    info: Attribute.Component<'about-me.about-me-info', true>;
+    favouriteMusic: Attribute.Component<'about-me.music-component', true>;
+    valorantInfo: Attribute.Component<'about-me.valorant-info'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::about.about',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::about.about',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiMyPortfolioMyPortfolio extends Schema.SingleType {
+  collectionName: 'my_portfolios';
+  info: {
+    singularName: 'my-portfolio';
+    pluralName: 'my-portfolios';
+    displayName: 'my-portfolio';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    portfolioData: Attribute.DynamicZone<
+      ['hero.hero-component', 'featuredskills.skill-component']
+    >;
+    header: Attribute.Component<'header.header-component'>;
+    Footer: Attribute.Component<'footer.footer'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::my-portfolio.my-portfolio',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::my-portfolio.my-portfolio',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiProjectProject extends Schema.CollectionType {
+  collectionName: 'projects';
+  info: {
+    singularName: 'project';
+    pluralName: 'projects';
+    displayName: 'Project';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    image: Attribute.Media;
+    techStack: Attribute.Component<'projects.tech-stack-tag'>;
+    Links: Attribute.Component<'global.link', true>;
+    featured: Attribute.Boolean & Attribute.DefaultTo<false>;
+    slug: Attribute.String;
+    project_categories: Attribute.Relation<
+      'api::project.project',
+      'manyToMany',
+      'api::project-category.project-category'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::project.project',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::project.project',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiProjectCategoryProjectCategory
+  extends Schema.CollectionType {
+  collectionName: 'project_categories';
+  info: {
+    singularName: 'project-category';
+    pluralName: 'project-categories';
+    displayName: 'Project Category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    description: Attribute.Text;
+    projects: Attribute.Relation<
+      'api::project-category.project-category',
+      'manyToMany',
+      'api::project.project'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::project-category.project-category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::project-category.project-category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -834,16 +834,16 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::about.about': ApiAboutAbout;
-      'api::my-portfolio.my-portfolio': ApiMyPortfolioMyPortfolio;
-      'api::project.project': ApiProjectProject;
-      'api::project-category.project-category': ApiProjectCategoryProjectCategory;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::i18n.locale': PluginI18NLocale;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::about.about': ApiAboutAbout;
+      'api::my-portfolio.my-portfolio': ApiMyPortfolioMyPortfolio;
+      'api::project.project': ApiProjectProject;
+      'api::project-category.project-category': ApiProjectCategoryProjectCategory;
     }
   }
 }

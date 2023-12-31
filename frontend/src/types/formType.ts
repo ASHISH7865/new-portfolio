@@ -19,7 +19,7 @@ export interface Opt {
 }
 
 export interface Validation {
-    type: 'required' | 'isEmail' | 'minLength' | 'isTrue' | 'oneOf'
+    type: 'required' | 'isEmail' | 'minLength' | 'isTrue' | 'oneOf' | 'isPhoneNumber'
     value?: string | number | boolean
     message: string
     ref?: string

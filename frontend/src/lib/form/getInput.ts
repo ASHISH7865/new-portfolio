@@ -20,6 +20,7 @@ const generateValidations = (field: InputProps) => {
             case 'isEmail'  : schema = (schema as YupString).email(rule.message);  break;
             case 'minLength': schema = (schema as YupString).min(rule?.value as number, rule.message);  break;
             case 'oneOf'    : schema = (schema as YupString).oneOf([Yup.ref((rule as any).ref)], rule.message);  break;
+            case 'isPhoneNumber': schema = (schema as YupString).matches(/^[0-9]{10}$/, rule.message);  break;
             default         : schema = schema.required(rule.message);  break;
         }
     }
