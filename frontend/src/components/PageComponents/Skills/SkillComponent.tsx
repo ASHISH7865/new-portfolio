@@ -60,7 +60,8 @@ const Skill = () => {
         <TooltipProvider key={skill.title}>
           <Tooltip>
             <TooltipTrigger asChild>
-              <div key={skill.title} className="p-4 rounded-md hover:bg-slate-100 dark:hover:bg-[#1a1a1a]  shadow-border ">
+              <div key={skill.title} className="p-4  relative rounded-md hover:bg-slate-100 dark:hover:bg-slate-900  shadow-border ">
+
                 {skill.icon}
               </div>
             </TooltipTrigger>

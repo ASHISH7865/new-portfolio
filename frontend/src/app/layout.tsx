@@ -23,7 +23,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <>
         <link rel="icon" href="/favicon.jpg" sizes="any" />
       <html lang="en">
-        <body className={`${inter.className} p-5 `}>
+        <body className={`${inter.className}s bg-slate-950`}>
           <Suspense fallback={<div>Loading...</div>}>
             <Theme>
               <Navbar {...data} />

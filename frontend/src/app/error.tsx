@@ -11,6 +11,7 @@ export default function GlobalError({ error, reset }: { error: Error & { digest?
     const handleRefresh = () => {
         router.refresh();
     }
+    //hi this is comment
   useEffect(() => {
     // Log the error to an error reporting service
   }, [error]);

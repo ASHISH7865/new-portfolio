@@ -3,10 +3,7 @@ import ProjectList from "./ProjectList";
 
 const Projects = (props : any) => {
   return (
-    <>
-      <FeaturedProject featuredProject={props.data.featuredProject} />
-      <ProjectList limit={3} allProjects = {props.data.allProjects}/>
-    </>
+      <ProjectList limit={3} allProjects = {props.data.projects}/>
   );
 };
 

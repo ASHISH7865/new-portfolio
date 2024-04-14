@@ -22,7 +22,7 @@ const Contact = () => {
   };
 
   return (
-    <Section id="contact" className="px-5 py-5 max-w-screen-xl mx-auto  rounded-2xl mt-20   shadow-border">
+    <Section id="contact" className="px-5 py-5 max-w-screen-xl mx-auto  rounded-2xl mt-20">
       <div className="flex justify-between items-center ">
         <SocialLinks />
         <FormComponent
