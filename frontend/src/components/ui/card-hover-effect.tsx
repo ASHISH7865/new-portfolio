@@ -68,7 +68,7 @@ export const HoverEffect = ({
                             item.skills.map((skill) => {
                                 if (skill.id === clickBadge) {
                                     return (
-                                        <AnimatePresence>
+                                        <AnimatePresence key={skill.id}>
                                             <motion.div
                                                 className="absolute top-0 left-0 transform h-full bg-slate-800 rounded-lg p-4"
                                                 initial={{ scale: 0, opacity: 0 }}
