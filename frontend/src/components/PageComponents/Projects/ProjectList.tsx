@@ -25,8 +25,6 @@ const ProjectList = (props : any) => {
           <Button>View All Projects</Button>
         </Link>
       </div>}
-      <div className="py-20 w-full h-screen">
-    </div>
     </Section>
   );
 };
