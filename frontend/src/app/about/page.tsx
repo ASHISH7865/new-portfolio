@@ -112,7 +112,7 @@ const DynamicTabData = [
 const page = async () => {
   const {data} = await getServerSideProps();
   return (
-    <div className="max-w-screen-xl mx-auto mt-10">
+    <div className="max-w-screen-xl mx-auto mt-10 p-4">
       <div className=" grid grid-cols-1 md:grid-cols-3 gap-8">
         <div className="grid grid-cols-1 md:grid-cols-2 md:col-span-2 gap-8">
           {data?.aboutMeInfo?.map((data : any) => (
